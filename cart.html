@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Breath & Brew Coffee</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <!-- Navigation Bar -->
+     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-coffee me-2"></i>Breath & Brew
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about us.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact us.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5" style="margin-top: 80px;"> 
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <div class="total-price">
+            <h4>Total Price: Php<span id="total-price">0.00</span></h4>
+        </div> 
+        <button class="btn btn-success" id="checkout">Checkout</button>
+    </div>    
+
+    <script>
+        const loadCart = () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            const totalPriceElem = document.getElementById('total-price');
+            cartItemsContainer.innerHTML = ''; 
+            let totalPrice = 0;
+
+            cart.forEach((item, index) => {
+            totalPrice += item.price * item.quantity;
+            cartItemsContainer.innerHTML += `
+                <div class="cart-item d-flex justify-content-between align-items-center mb-3">
+                    <div>${item.name} (x${item.quantity}) - Php${(item.price * item.quantity).toFixed(2)}</div>
+                    <div>
+                        <button class="btn btn-warning edit-item increase" data-index="${index}">+</button>
+                        <button class="btn btn-warning edit-item decrease" data-index="${index}">-</button>
+                        <button class="btn btn-danger delete-item" data-index="${index}">Delete</button>
+                    </div>
+                </div>
+            `;
+        });
+
+        totalPriceElem.textContent = totalPrice.toFixed(2);
+    };
+
+        document.addEventListener('click', (e) => {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        if (e.target.classList.contains('increase')) {
+            // Increase quantity
+            const index = e.target.getAttribute('data-index');
+            cart[index].quantity += 1;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        if (e.target.classList.contains('decrease')) {
+            // Decrease quantity 
+            const index = e.target.getAttribute('data-index');
+            if (cart[index].quantity > 1) {
+                cart[index].quantity -= 1;
+                localStorage.setItem('cart', JSON.stringify(cart));
+                loadCart();
+            }
+        }
+
+            // Delete Item
+            if (e.target.classList.contains('delete-item')) {
+                const index = e.target.getAttribute('data-index');
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.splice(index, 1);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                loadCart();
+            }
+
+            // Checkout
+            if (e.target.id === 'checkout') {
+                const confirmCheckout = confirm("Are you sure you want to checkout?");
+                if (confirmCheckout) {
+                    localStorage.removeItem('cart'); 
+                    alert('Thank you for your purchase!');
+                    window.location.reload(); 
+                }
+            }
+        });
+
+        // Add to Cart Functionality 
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const name = e.target.getAttribute('data-name');
+                const price = parseFloat(e.target.getAttribute('data-price'));
+                
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                const itemIndex = cart.findIndex(item => item.name === name);
+                if (itemIndex >= 0) {
+                    cart[itemIndex].quantity += 1;
+                } else {
+                    cart.push({ name, price, quantity: 1 });
+                }
+
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                alert(`Php{name} added to your cart!`);
+            });
+        });
+
+        loadCart();
+    </script>
+</body>
+</html>
