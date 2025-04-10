@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Breath & Brew Coffee</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-coffee me-2"></i>Breath & Brew
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about us.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact us.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1>Our Menu</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Menu</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Navigation -->
+    <section class="menu-nav py-4">
+        <div class="container">
+            <ul class="nav nav-pills menu-tabs justify-content-center mb-4" id="menuTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="coffee-tab" data-bs-toggle="pill" data-bs-target="#coffee" type="button" role="tab">Coffee</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="espresso-tab" data-bs-toggle="pill" data-bs-target="#espresso" type="button" role="tab">Espresso</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="specialty-tab" data-bs-toggle="pill" data-bs-target="#specialty" type="button" role="tab">Specialty</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pastries-tab" data-bs-toggle="pill" data-bs-target="#pastries" type="button" role="tab">Pastries</button>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="tab-content">
+            <!-- Coffee Tab -->
+            <div class="tab-pane fade show active" id="coffee" role="tabpanel" aria-labelledby="coffee-tab">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="menu-item">
+                            <div class="menu-item-img">
+                                <img src="ia.jpg" alt="Iced Americano">
+                            </div>
+                            <div class="menu-item-info">
+                                <h4>Iced Americano</h4>
+                                <span class="price">Php 115.00</span>
+                                <button class="btn btn-primary add-to-cart" data-name="Iced Americano" data-price="115.00">Add to Cart</button>
+                                <button class="btn btn-secondary view-item" data-name="Iced Americano" data-price="115.00" data-description="Experience the bold, smooth taste of espresso over ice, perfect for those who love a classic coffee refresh.">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="menu-item">
+                            <div class="menu-item-img">
+                                <img src="220629.webp" alt="Iced Vanilla Latte">
+                            </div>
+                            <div class="menu-item-info">
+                                <h4>Iced Vanilla Latte</h4>
+                                <span class="price">Php 150.00</span>
+                                <button class="btn btn-primary add-to-cart" data-name="Iced Vanilla Latte" data-price="150.00">Add to Cart</button>
+                                <button class="btn btn-secondary view-item" data-name="Iced Vanilla Latte" data-price="150.00" data-description= "A creamy, cool blend of espresso, velvety milk, and a splash of sweet vanilla syrup. Served over ice for a smooth, refreshing twist on your favorite classic latte. Perfectly sweet and energizing!">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="menu-item">
+                            <div class="menu-item-img">
+                                <img src="matcha.jpg" alt="Matcha Latte">
+                            </div>
+                            <div class="menu-item-info">
+                                <h4>Matcha Latte</h4>
+                                <span class="price">Php 170.00</span>
+                                <button class="btn btn-primary add-to-cart" data-name="Matcha Latte" data-price="170.00">Add to Cart</button>
+                                <button class="btn btn-secondary view-item" data-name="Matcha Latte" data-price="170.00" data-description="A creamy blend of premium matcha and steamed milk, offering a smooth, earthy flavor with a touch of sweetness.">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Espresso Tab -->
+            <div class="tab-pane fade" id="espresso" role="tabpanel" aria-labelledby="espresso-tab">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="menu-item">
+                            <div class="menu-item-img">
+                                <img src="classic espresso.jpg" alt="Classic Espresso">
+                            </div>
+                            <div class="menu-item-info">
+                                <h4>Classic Espresso</h4>
+                                <span class="price">Php 120.00</span>
+                                <button class="btn btn-primary add-to-cart" data-name="Classic Espresso" data-price="120.00">Add to Cart</button>
+                                <button class="btn btn-secondary view-item" data-name="Classic Espresso" data-price="120.00" data-description="Rich, bold, and full of flavor, our Classic Espresso delivers a smooth, intense coffee experience. Perfectly brewed with the finest beans for that authentic, robust taste in every sip.">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="menu-item">
+                            <div class="menu-item-img">
+                                <img src="cappuccino.jpg" alt="Cappuccino">
+                            </div>
+                            <div class="menu-item-info">
+                                <h4>Cappuccino</h4>
+                                <span class="price">Php 160.00</span>
+                                <button class="btn btn-primary add-to-cart" data-name="Cappuccino" data-price="160.00">Add to Cart</button>
+                                <button class="btn btn-secondary view-item" data-name="Cappuccino" data-price="160.00" data-description="A perfect blend of rich espresso, steamed milk, and velvety foam, creating a smooth and satisfying cappuccino experience.">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="menu-item">
+                            <div class="menu-item-img">
+                                <img src="cafe latte.jpg" alt="Cafe Latte">
+                            </div>
+                            <div class="menu-item-info">
+                                <h4>Latte</h4>
+                                <span class="price">Php 160.00</span>
+                                <button class="btn btn-primary add-to-cart" data-name="Cafe Latte" data-price="160.00">Add to Cart</button>
+                                <button class="btn btn-secondary view-item" data-name="Cafe Latte" data-price="160.00" data-description="Smooth espresso with steamed milk and a light layer of foam. Available in various flavors.">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Specialty Tab -->
+            <div class="tab-pane fade" id="specialty" role="tabpanel" aria-labelledby="specialty-tab">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="menu-item">
+                            <div class="menu-item-img">
+                                <img src="maple.jpg" alt="Maple Cinnamon Latte">
+                            </div>
+                            <div class="menu-item-info">
+                                <h4>Maple Cinnamon Latte</h4>
+                                <span class="price">Php 150.00</span>
+                                <button class="btn btn-primary add-to-cart" data-name="Maple Cinnamon Latte" data-price="150.00">Add to Cart</button>
+                                <button class="btn btn-secondary view-item" data-name="Maple Cinnamon Latte" data-price="150.00" data-description="A warm, comforting twist on the classic latte, featuring espresso, steamed milk, and a dash of maple syrup and cinnamon. Finished with a sprinkle of cinnamon sugar, this drink combines the sweetness of maple with the spice of cinnamon for the perfect cozy treat.">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="menu-item">
+                            <div class="menu-item-img">
+                                <img src="cheese.webp" alt="Bacon & Cheddar Croissant">
+                            </div>
+                            <div class="menu-item-info">
+                                <h4>Bacon & Cheddar Croissant</h4>
+                                <span class="price">Php 130.00</span>
+                                <button class="btn btn-primary add-to-cart" data-name="Bacon & Cheddar Croissant" data-price="130.00">Add to Cart</button>
+                                <button class="btn btn-secondary view-item" data-name="Bacon & Cheddar Croissant" data-price="130.00" data-description="A buttery, flaky croissant stuffed with crispy bacon and sharp cheddar cheese. Perfectly baked to golden perfection, this savory pastry pairs wonderfully with any coffee drink.">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="menu-item">
+                            <div class="menu-item-img">
+                                <img src="avocado.jpg" alt="Avocado Toast with Poached Egg">
+                            </div>
+                            <div class="menu-item-info">
+                                <h4>Avocado Toast with Poached Egg</h4>
+                                <span class="price">Php 180.00</span>
+                                <button class="btn btn-primary add-to-cart" data-name="Avocado Toast with Poached Egg" data-price="180.00">Add to Cart</button>
+                                <button class="btn btn-secondary view-item" data-name="Avocado Toast with Poached Egg" data-price="180.00" data-description="Fresh, creamy avocado spread on toasted sourdough bread, topped with a perfectly poached egg and a sprinkle of chili flakes, sesame seeds, and a drizzle of olive oil. A healthy and savory option to enjoy with your favorite coffee.">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pastries Tab -->
+            <div class="tab-pane fade" id="pastries" role="tabpanel" aria-labelledby="pastries-tab">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="menu-item">
+                            <div class="menu-item-img">
+                                <img src="raspberry.jpg" alt="Raspberry Almond Danish">
+                            </div>
+                            <div class="menu-item-info">
+                                <h4>Raspberry Almond Danish</h4>
+                                <span class="price">Php 140.00</span>
+                                <button class="btn btn-primary add-to-cart" data-name="Raspberry Almond Danish" data-price="140.00">Add to Cart</button>
+                                <button class="btn btn-secondary view-item" data-name="Raspberry Almond Danish" data-price="140.00" data-description="A flaky, buttery pastry filled with sweet raspberry jam and topped with a rich almond cream filling. Finished with a dusting of powdered sugar for the perfect bite.">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="menu-item">
+                            <div class="menu-item-img">
+                                <img src="blueberry.jpg" alt="Blueberry Muffin">
+                            </div>
+                            <div class="menu-item-info">
+                                <h4>Blueberry Muffin</h4>
+                                <span class="price">Php 160.00</span>
+                                <button class="btn btn-primary add-to-cart" data-name="Blueberry Muffin" data-price="160.00">Add to Cart</button>
+                                <button class="btn btn-secondary view-item" data-name="Blueberry Muffin" data-price="160.00" data-description="A soft and moist muffin bursting with fresh, juicy blueberries. Lightly sweetened and with a golden, slightly crisp top, it’s the perfect balance of flavor and texture in every bite. Great with a cup of coffee or tea!">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="menu-item">
+                            <div class="menu-item-img">
+                                <img src="chocolate-chip-cookie-recipe.jpg" alt="Chocolate Chip Cookie">
+                            </div>
+                            <div class="menu-item-info">
+                                <h4>Chocolate Chip Cookie</h4>
+                                <span class="price">Php 130.00</span>
+                                <button class="btn btn-primary add-to-cart" data-name="Chocolate Chip Cookie" data-price="130.00">Add to Cart</button>
+                                <button class="btn btn-secondary view-item" data-name="Chocolate Chip Cookie" data-price="130.00" data-description="A classic treat made with rich, creamy butter, brown sugar, and loaded with semi-sweet chocolate chips. Soft and chewy in the center with a perfectly golden, slightly crisp edge—an irresistible favorite for any time of day.">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Details Modal -->
+    <div class="modal fade" id="viewItemModal" tabindex="-1" aria-labelledby="viewItemModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="viewItemModalLabel">Product Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 id="itemName"></h4>
+                    <p id="itemDescription"></p>
+                    <span id="itemPrice"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.view-item').forEach(button => {
+            button.addEventListener('click', function() {
+                const name = this.getAttribute('data-name');
+                const description = this.getAttribute('data-description');
+                const price = this.getAttribute('data-price');
+
+                document.getElementById('itemName').innerText = name;
+                document.getElementById('itemDescription').innerText = description;
+                document.getElementById('itemPrice').innerText = 'Php' + price;
+
+                new bootstrap.Modal(document.getElementById('viewItemModal')).show();
+            });
+        });
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', function() {
+        const name = this.getAttribute('data-name'); // Get the product name
+        const price = parseFloat(this.getAttribute('data-price')); // Get the product price
+        
+        // Check if name and price are valid
+        if (!name || isNaN(price)) {
+            alert("Error: Missing product details.");
+            return;
+        }
+
+        // Get cart from localStorage or create a new one if not exists
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Check if item already in cart
+        const itemIndex = cart.findIndex(item => item.name === name);
+        if (itemIndex >= 0) {
+            cart[itemIndex].quantity += 1;
+        } else {
+            cart.push({ name, price, quantity: 1 });
+        }
+
+        // Save updated cart back to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Optionally, alert user that item was added to the cart
+        alert(name + " has been added to your cart!");
+    });
+});
+    </script>
+    
+
+    <!-- Custom Orders -->
+    <section class="custom-orders py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="custom.jpg" alt="Custom Coffee Orders" class="img-fluid rounded">
+                </div>
+                <div class="col-lg-6">
+                    <h2>Custom Orders</h2>
+                    <p>Can't find what you're looking for? We offer custom coffee blends and specialty drinks tailored to your preferences.</p>
+                    <p>Our baristas are skilled in creating unique flavor combinations and can adjust any drink to your taste preferences.</p>
+                    <a href="contact us.html" class="btn btn-primary">Contact Us for Special Orders</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Newsletter -->
+     <section class="py-5 newsletter">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-4">Subscribe to Our Newsletter</h2>
+                    <p class="mb-4">Stay updated with our latest blends, promotions, and coffee tips!</p>
+                    <form class="newsletter-form">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5><i class="fas fa-coffee me-2"></i>Breath & Brew</h5>
+                    <p>Exceptional coffee, exceptional moments.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Opening Hours</h5>
+                    <ul class="list-unstyled footer-info">
+                        <li>Monday - Friday: 7am - 8pm</li>
+                        <li>Saturday: 8am - 8pm</li>
+                        <li>Sunday: 9am - 6pm</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled footer-info">
+                        <li><i class="fas fa-map-marker-alt me-2"></i>401, San Jose Sto.Tomas Batangas</li>
+                        <li><i class="fas fa-phone me-2"></i>(041) 873-9853</li>
+                        <li><i class="fas fa-envelope me-2"></i>breath&brew@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; 2025 Breath & Brew. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
+</body>
+</html>
